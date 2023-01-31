@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{094C8F36-ED02-409F-829C-71FB33E26593}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DesktopApp</RootNamespace>
+    <AssemblyName>DesktopApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\BookDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BookDetailForm.Designer.cs">
+      <DependentUpon>BookDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BooksForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BooksForm.Designer.cs">
+      <DependentUpon>BooksForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BorrowingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BorrowingsForm.Designer.cs">
+      <DependentUpon>BorrowingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormContainer.Designer.cs">
+      <DependentUpon>FormContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormWithMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormWithMenu.Designer.cs">
+      <DependentUpon>FormWithMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GenreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GenreForm.Designer.cs">
+      <DependentUpon>GenreForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Registry.cs" />
+    <Compile Include="Forms\SelectGenresForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelectGenresForm.Designer.cs">
+      <DependentUpon>SelectGenresForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Utils.cs" />
+    <Compile Include="ORM\Author.cs" />
+    <Compile Include="ORM\Book.cs" />
+    <Compile Include="ORM\BookCopy.cs" />
+    <Compile Include="ORM\BookGenre.cs" />
+    <Compile Include="ORM\Borrowing.cs" />
+    <Compile Include="ORM\DAO\AbstractDAO.cs" />
+    <Compile Include="ORM\DAO\AuthorDAO.cs" />
+    <Compile Include="ORM\DAO\BookCopyDAO.cs" />
+    <Compile Include="ORM\DAO\BookDAO.cs" />
+    <Compile Include="ORM\DAO\BookGenreDAO.cs" />
+    <Compile Include="ORM\DAO\BorrowingDAO.cs" />
+    <Compile Include="ORM\DAO\Database.cs" />
+    <Compile Include="ORM\DAO\GenreDAO.cs" />
+    <Compile Include="ORM\DAO\InfoDAO.cs" />
+    <Compile Include="ORM\DAO\LanguageDAO.cs" />
+    <Compile Include="ORM\DAO\ReservationQueueDAO.cs" />
+    <Compile Include="ORM\DAO\TranslatorDAO.cs" />
+    <Compile Include="ORM\DAO\UserDAO.cs" />
+    <Compile Include="ORM\DomainObject.cs" />
+    <Compile Include="ORM\Genre.cs" />
+    <Compile Include="ORM\Info.cs" />
+    <Compile Include="ORM\Key.cs" />
+    <Compile Include="ORM\Language.cs" />
+    <Compile Include="ORM\ReservationQueue.cs" />
+    <Compile Include="ORM\Translator.cs" />
+    <Compile Include="ORM\User.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\BookDetailForm.resx">
+      <DependentUpon>BookDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BooksForm.resx">
+      <DependentUpon>BooksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BorrowingsForm.resx">
+      <DependentUpon>BorrowingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormContainer.resx">
+      <DependentUpon>FormContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormWithMenu.resx">
+      <DependentUpon>FormWithMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GenreForm.resx">
+      <DependentUpon>GenreForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelectGenresForm.resx">
+      <DependentUpon>SelectGenresForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
