@@ -17,6 +17,9 @@ INSERT INTO Info (before_closing_date_days, borrowing_duration_days, queues_per_
 VALUES (3, 30, 5, 7, 30);
 */
 
+SET QUOTED_IDENTIFIER ON
+GO
+
 CREATE TABLE Mock_email (
 	email_addr VARCHAR(255),
 	subject VARCHAR(255),
@@ -640,9 +643,3 @@ WHERE (@title IS NULL OR Book.title_lower LIKE ('%' + LOWER(@title ) + '%')) AND
 	)
 END
 GO
-
-SELECT * FROM Reservation_queue
-SELECT * FROM Borrowing
-DELETE FROM Borrowing
-EXEC newBorrowing 54, 81
-SELECT * FROM "User"

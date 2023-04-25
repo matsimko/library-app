@@ -3,7 +3,8 @@
 --   site:      SQL Server 2012
 --   type:      SQL Server 2012
 
-
+SET QUOTED_IDENTIFIER ON
+GO
 
 CREATE TABLE Author 
     (
